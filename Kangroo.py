@@ -5,7 +5,6 @@ Challenge: HackerRank Kangroo
 Input    : 0 2 5 3    , x1 , v1 , x2, v2
 O/P      : No
 '''
-#!/bin/python3
 import math
 import os
 import random
@@ -34,13 +33,21 @@ def whoisinfront(x1,x2):
         Infront = 'K2'
     return Infront
 
+def ratio(x1,v1,x2,v2):
+    return (x1-x2) % (v1-v2)
+
+#21 6 47 3
 # Complete the kangaroo function below.
 def kangaroo(x1, v1, x2, v2):
     if didtheystarttogether(x1,x2) is True :
-        print ('Yes')
-    elif whoisfaster (v1,v2) is whoisinfront(x1,x2):
-        print('No')
-
+        return ('YES')
+    elif whoisfaster (v1,v2) is whoisinfront(x1,x2) or v1 == v2:
+        return ('NO')
+    elif ratio(x1,v1,x2,v2) is 0:
+        return ('YES')
+    else:
+        return ('NO')
+  
 if __name__ == '__main__':
     #fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
