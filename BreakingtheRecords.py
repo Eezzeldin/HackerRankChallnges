@@ -6,7 +6,7 @@ Challenge: Breaking the Records
 - It should teach how to do computation within the
 elements of a list.
 - Also how can this computation affect on an outside
-variable. Like an Event Listener
+variable. Like an Event Listener.
 '''
 
 ##Initialize
@@ -26,6 +26,7 @@ Max_Record = 10
 Min_Record = 10
 Max_Count  = 0
 Min_Count  = 0
+'''
 #2nd Game
 Game_Index = 1
 Maria_Score=5
@@ -38,3 +39,12 @@ elif Maria_Score > Max_Record:
     Max_Record = Maria_Score
     Max_Count +=1
 print ('Min_Count:',Min_Count,'Max_Count:',Max_Count,'Min_Record:',Min_Record,'Max_Record:',Max_Record)
+'''
+for Maria_Score in Sample_Input:
+    if Maria_Score < Min_Record:
+        Min_Record = Maria_Score #Update Record
+        Min_Count +=1            #Increment
+    elif Maria_Score > Max_Record:
+        Max_Record = Maria_Score
+        Max_Count +=1
+    print ('Min_Count:',Min_Count,'Max_Count:',Max_Count,'Min_Record:',Min_Record,'Max_Record:',Max_Record)
