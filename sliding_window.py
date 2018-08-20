@@ -20,3 +20,14 @@ print (w)
 if sum (w) == d : counter+=1
 print (counter)
 #Trial 2 :
+m0+=s
+w = [Input_Sample [i] for i in range (m0,m0+m)]
+print (w)
+if sum (w) == d : counter+=1
+print (counter)
+#Trial 3
+m0+=s
+w = [Input_Sample [i] for i in range (m0,m0+m)]
+print (w)
+if sum (w) == d : counter+=1
+print (counter)
