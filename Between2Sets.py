@@ -1,41 +1,19 @@
 '''
 Author : Emad Ezzeldin
-Date   : Tuesday August 7th 2018 , Monday August 13th 2018
+Date   : Tuesday August 7th 2018 , Monday August 13th 2018 , Friday August 17th 2018
 Problem: Between 2 Sets
 Progress:
 =========
 Now stuck with one piece which is how to apply a function to evey element in a list.
 I found this source on it though:
 https://stackoverflow.com/questions/1790520/how-to-apply-a-logical-operator-to-all-elements-in-a-python-list/1790532
+
+Lessons Learned:
+How to apply a function on every element of a list.
+How to check if a bool function applies on every element of a list.
+How to think in a chain structure where a condition can go recursively. Recursive Boolean Logic.
 '''
 
-
-m = 0 #1<= m <=10
-n = 0 #1<= n <=10
-
-a = []#1<= a <=100
-b = []#1<= b <=100
-
-
-m,n = 2,3
-
-a,b = [2,4],[16,32,96]
-
-
-#for i in range (m): print (a[i])
-#for j in range (n): print (b[j])
-
-#for i in range (1,101): print (i)
-#for j in range (1,101): print (j)
-
-
-a1        = a ==4
-condition = all (a)
-#print (condition)
-
-inbetween = [i for i in range (1,101) for A in a for B in b if i % A is 0 and B%i is 0]
-#print (inbetween)
-#print (set (inbetween))
 
 '''
 This Section is dedicated for knowing if integer x between 1 and 100 is a factor of every element in the list
