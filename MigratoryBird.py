@@ -4,11 +4,11 @@ Date   : Tuesday August 21st 2018
 Challenge : MigratoryBird
 '''
 
-input_Sample = [1, 4, 4, 4, 5, 3,3,8,8,8]
+input_Sample = [1, 4, 4, 4, 5, 3,3,5,5,5]
 l            = len (input_Sample)
 pairs        = []
-repeated     = {}
-for element in input_Sample: repeated [element] = 0
+repeated     = {1: 0 , 2:0 , 3:0 , 4:0 , 5:0}
+#for element in input_Sample: repeated [element] = 0
 i            = 0
 j            = 0
 i1           = 0     # fixed starting index
@@ -23,6 +23,10 @@ def DivisbleSum (ii,ij):
     b            = ii == ij # condition
     return b
 
+for element in input_Sample:
+    repeated [element] += 1
+print (repeated)        
+'''
 ## Slide Variable Sized Window
 for i in range (i1,i2):
     ii=  input_Sample [i]                              #current value of i
@@ -35,6 +39,8 @@ for i in range (i1,i2):
     print (repeated)                                      #Print output
 
 #print (max(repeated))
+'''
+
 
 ## Max Count Operations
 #Get List of Counts
@@ -55,3 +61,11 @@ if len (MaxCE) >1 :
 else:
     Final = MaxCE[0]
 print (Final)
+
+'''
+count = [0]*5
+for t in   map (int,input_Sample):
+    count[t] += 1
+print (count)
+print(count.index(max(count)))
+'''
