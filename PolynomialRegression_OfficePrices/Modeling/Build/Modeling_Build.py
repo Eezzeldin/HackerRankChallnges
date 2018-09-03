@@ -1,15 +1,29 @@
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import Ridge
-from sklearn.preprocessing import PolynomialFeatures
 np.set_printoptions(precision=2)
 
 # synthetic dataset for more complex regression
 from sklearn.datasets import make_friedman1
 X_F1, y_F1 = make_friedman1(n_samples = 100,
                            n_features = 7, random_state=0)
+
+DataPath = '/Users/emadezzeldin/Dropbox/PhD/HackerRank/HackerRankChallnges/PolynomialRegression_OfficePrices/Modeling/Data/'
+X_train  =  pd.read_csv (DataPath+'TrainingData_Predictors.csv')
+Y_train  =  pd.read_csv (DataPath+ 'TrainingData_Responce.csv')
+Y_train  = Y_train ['Responce']
+print ('=='*40)
+print ('Training Data Predictors')
+print (X_train)
+print ('=='*40)
+print ('Training Data Responce')
+print (Y_train)
+
+X_F1, y_F1 = X_train , Y_train
+
+from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Ridge
+from sklearn.preprocessing import PolynomialFeatures
 
 X_train, X_test, y_train, y_test = train_test_split(X_F1, y_F1,
                                                    random_state = 0)
