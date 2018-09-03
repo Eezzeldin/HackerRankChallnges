@@ -49,37 +49,44 @@ def get_DayofProgrammer(FebruaryDays):
 
 
 def get_DateofProgrammer(year):
-    print ("==" *40 )
-    print ("Time to get Date of Programmer")
-    calender = is_JulianGregorian(year)
-    print ("Calender Has Been Determined as: ", calender)
-    LeapYear = is_LeapYear (year,calender)
-    print ("Was it LeapYear? : ", LeapYear)
-    FebruaryDays = get_FebruaryDays (LeapYear)
-    print ("Number of Days in Februay: " , FebruaryDays)
-    DayofProgrammer = get_DayofProgrammer(FebruaryDays)
-    print ("Is it the 13th or 12t? " , DayofProgrammer)
-    YearofProgrammer= year
-    MonthofProgrammer= '09'
-    DateofProgrammer = str(DayofProgrammer) +'.09.' + str(year)
-    print ("Returning Date of Programmer:" , DateofProgrammer )
-    print ("=="* 40)
-    print ("Results: ",
-    "Calender Has Been Determined as: " + str(calender),
-    "Date of Programmer: "              + str(DateofProgrammer),
-    "Was it LeapYear? : "               + str(LeapYear),
-    "Number of Days in Februay: "       + str(FebruaryDays),
-    "Is it the 13th or 12t? "           + str(DayofProgrammer),
-    "Returning Date of Programmer:"     + str(DateofProgrammer)
-    ,sep= '\n')
-    print ("The End")
-    print ("==" * 40 )
+    if year != 1918:
+        print ("Not 1918 use case")
+        print ("==" *40 )
+        print ("Time to get Date of Programmer")
+        calender = is_JulianGregorian(year)
+        print ("Calender Has Been Determined as: ", calender)
+        LeapYear = is_LeapYear (year,calender)
+        print ("Was it LeapYear? : ", LeapYear)
+        FebruaryDays = get_FebruaryDays (LeapYear)
+        print ("Number of Days in Februay: " , FebruaryDays)
+        DayofProgrammer = get_DayofProgrammer(FebruaryDays)
+        print ("Is it the 13th or 12t? " , DayofProgrammer)
+        YearofProgrammer= year
+        MonthofProgrammer= '09'
+        DateofProgrammer = str(DayofProgrammer) +'.09.' + str(year)
+        print ("Returning Date of Programmer:" , DateofProgrammer )
+        print ("=="* 40)
+        print ("Results: ",
+        "Year Entered :"+ str (year),
+        "Not 1918 use case",
+        "Calender Has Been Determined as: " + str(calender),
+        "Date of Programmer: "              + str(DateofProgrammer),
+        "Was it LeapYear? : "               + str(LeapYear),
+        "Number of Days in Februay: "       + str(FebruaryDays),
+        "Is it the 13th or 12t? "           + str(DayofProgrammer),
+        "Returning Date of Programmer:"     + str(DateofProgrammer)
+        ,sep= '\n')
+        print ("The End")
+        print ("==" * 40 )
+    else:
+        print ("1918 use case")
+        DateofProgrammer = '26.09.1918'
     return DateofProgrammer
 
 
 year0            = 2017
 year1            = 2016
-year2            = 1800
+year2            = 1918
 DayofProgrammer0  = get_DateofProgrammer(year0)
 print (DayofProgrammer0,'\n')
 DayofProgrammer1  = get_DateofProgrammer(year1)

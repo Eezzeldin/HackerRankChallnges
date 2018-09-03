@@ -35,12 +35,15 @@ def get_DayofProgrammer(FebruaryDays):
     return DayofProgrammer
 
 def get_DateofProgrammer(year):
-    calender = is_JulianGregorian(year)
-    LeapYear = is_LeapYear (year,calender)
-    FebruaryDays = get_FebruaryDays (LeapYear)
-    DayofProgrammer = get_DayofProgrammer(FebruaryDays)
-    YearofProgrammer= year
-    MonthofProgrammer= '09'
-    return str(DayofProgrammer) +'.09.' + str(year)
+    if year is not 1918:
+        calender = is_JulianGregorian(year)
+        LeapYear = is_LeapYear (year,calender)
+        FebruaryDays = get_FebruaryDays (LeapYear)
+        DayofProgrammer = get_DayofProgrammer(FebruaryDays)
+        YearofProgrammer= year
+        MonthofProgrammer= '09'
+        return str(DayofProgrammer) +'.09.' + str(year)
+    else:
+        return '26.09.1918'
 
 DayofProgrammer = get_DateofProgrammer(year)
