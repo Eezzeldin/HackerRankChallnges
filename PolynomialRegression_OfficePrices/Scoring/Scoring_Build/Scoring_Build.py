@@ -3,8 +3,10 @@ import pandas as pd
 
 
 def ModelScoring(ModelPrediction,True_Value):
-    pass
-
+    d = (True_Value - ModelPrediction) /10
+    d_adjusted = max (d-0.1,0)
+    Score = max (1-d_adjusted,0)
+    return Score
 
 
 
