@@ -3,10 +3,15 @@ import pandas as pd
 
 
 def ModelScoring(ModelPrediction,True_Value):
-    d = (True_Value - ModelPrediction) /10
+    d = abs (True_Value - ModelPrediction) /10
+    print ('d: ' ,d)
+    print ('d-0.1: ' , d-0.1)
     d_adjusted = max (d-0.1,0)
+    print ('d_adjusted: ', d_adjusted)
+    print ('1-d_adjusted: ', 1-d_adjusted)
     Score = max (1-d_adjusted,0)
-    return Score
+    print ('Score', Score)
+    return float (Score)
 
 
 
@@ -23,3 +28,7 @@ if __name__ == "__main__":
     print ("=="*40)
     print ("True Values")
     print (True_Values_list)
+    print ("=="*40)
+    print ("Model Scores")
+    ModelScores = [ModelScoring (Prediction,TrueValue) for Prediction,TrueValue in zip(Predictions_list,True_Values_list)]
+    print (ModelScores)
