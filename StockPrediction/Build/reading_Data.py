@@ -2,23 +2,23 @@ import pandas as pd
 import os
 
 
-DataFile = os.path.join (os.getcwd(),'../DataFiles/train.txt')
-Data     = pd.read_table(DataFile,sep='\n',header =None)
-(Data.transpose().to_csv ('showme.csv'))
+DataFile        = os.path.join (os.getcwd(),'../DataFiles/train.txt')
+Data_Handle     = open (DataFile)
+Data_text       = Data_Handle.read()
 print ("=="*40)
-print (Data)
+#print (Data_text)
 print ("=="*40)
-print (Data.iloc[2])
+
+StocksData_text       = Data_text.split('\n')[:-1]
 print ("=="*40)
-print (Data.transpose())
+print (StocksData_text[0])
+print (StocksData_text[5])
+print (StocksData_text[-1])
 print ("=="*40)
-print (Data.values.tolist())
-print ("=="*40)
-DataList  = Data.values
-for Data in DataList:
-    Stock = Data
-    StockNames = Stock [0]
-    print (Stock)
-    print (StockNames)
-#print ([Data.values.tolist() [0][0] for stock in ])
-print ("=="*40)
+
+#StockNames     = StocksData_text [0].split()[0]
+#print (StockNames)
+StockNames       = [Stock.split() [0] for Stock in StocksData_text]
+print (StockNames)
+StockData        = [Stock.split() [1:] for Stock in StocksData_text]
+print (StockData)
